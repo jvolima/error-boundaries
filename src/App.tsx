@@ -4,10 +4,11 @@ function App() {
   const [counter, setCounter] = useState(0)
 
   function handleAdd() {
-    throw new Error(
-      'error boundaries not work in events. ' + 
-      'Use try catch instead.'
-    )
+    setCounter(old => old + 1)
+  }
+
+  if (counter === 3) {
+    throw new Error('test error boundary')
   }
 
   return (
